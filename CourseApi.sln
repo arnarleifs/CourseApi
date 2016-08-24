@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseApi", "src\CourseApi\CourseApi.xproj", "{86C3C8ED-9FED-4F8F-8408-FD44AFDB3092}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseApi.Services", "src\CourseApi.Services\CourseApi.Services.xproj", "{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,16 @@ Global
 		{86C3C8ED-9FED-4F8F-8408-FD44AFDB3092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86C3C8ED-9FED-4F8F-8408-FD44AFDB3092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86C3C8ED-9FED-4F8F-8408-FD44AFDB3092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{86C3C8ED-9FED-4F8F-8408-FD44AFDB3092} = {46A7C28F-851A-4B1B-9EF9-56D7FFF05B7E}
+		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1} = {46A7C28F-851A-4B1B-9EF9-56D7FFF05B7E}
 	EndGlobalSection
 EndGlobal
