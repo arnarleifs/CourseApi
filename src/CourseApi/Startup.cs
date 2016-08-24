@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using CourseApi.Services.Interfaces;
+using CourseApi.Services.Implementations;
 
 namespace CourseApi
 {
@@ -38,6 +40,11 @@ namespace CourseApi
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+            
+            // Add dependency injection
+            services.AddTransient<ICourseService, CourseService>();
+
+            CourseApi.Services.Startup.Initialize(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

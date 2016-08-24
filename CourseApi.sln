@@ -14,6 +14,10 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseApi", "src\CourseApi\
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseApi.Services", "src\CourseApi.Services\CourseApi.Services.xproj", "{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseApi.FakeRepositories", "src\CourseApi.FakeRepositories\CourseApi.FakeRepositories.xproj", "{DF5AD418-33C6-4FFD-9C96-28A07FAAE173}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CourseApi.Models", "src\CourseApi.Models\CourseApi.Models.xproj", "{D8421FFC-24EE-4500-B3AD-3A6F41AF93A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +32,14 @@ Global
 		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF5AD418-33C6-4FFD-9C96-28A07FAAE173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5AD418-33C6-4FFD-9C96-28A07FAAE173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5AD418-33C6-4FFD-9C96-28A07FAAE173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5AD418-33C6-4FFD-9C96-28A07FAAE173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8421FFC-24EE-4500-B3AD-3A6F41AF93A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8421FFC-24EE-4500-B3AD-3A6F41AF93A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8421FFC-24EE-4500-B3AD-3A6F41AF93A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8421FFC-24EE-4500-B3AD-3A6F41AF93A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,5 +47,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{86C3C8ED-9FED-4F8F-8408-FD44AFDB3092} = {46A7C28F-851A-4B1B-9EF9-56D7FFF05B7E}
 		{7180DBAD-68C8-4765-BF27-3B2D6425E0D1} = {46A7C28F-851A-4B1B-9EF9-56D7FFF05B7E}
+		{DF5AD418-33C6-4FFD-9C96-28A07FAAE173} = {46A7C28F-851A-4B1B-9EF9-56D7FFF05B7E}
+		{D8421FFC-24EE-4500-B3AD-3A6F41AF93A8} = {46A7C28F-851A-4B1B-9EF9-56D7FFF05B7E}
 	EndGlobalSection
 EndGlobal

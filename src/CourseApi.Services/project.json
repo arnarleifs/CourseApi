@@ -1,7 +1,10 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "dependencies": {
+    "CourseApi.FakeRepositories": "1.0.0-*",
+    "CourseApi.Models": "1.0.0-*",
+    "Microsoft.Extensions.DependencyInjection": "1.0.0",
     "NETStandard.Library": "1.6.0"
   },
 

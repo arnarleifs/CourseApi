@@ -1,0 +1,8 @@
+﻿using CourseApi.Models;
+
+namespace CourseApi.FakeRepositories.Interfaces
+{
+    public interface ICourseRepository : IRepository<Course>
+    {
+    }
+}
