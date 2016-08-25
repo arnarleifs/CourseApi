@@ -20,9 +20,14 @@ namespace CourseApi.Services.Implementations
         }
         public IEnumerable<Student> GetAllStudentsByCourseId(int id)
         {
-            var courseLinks = courseLinkRepository.GetMany(c => c.CourseId == id).ToArray();
-            return studentRepository.GetAll()
-                .Join(courseLinks, s => s.SSN, c => c.SSN, ((student, link) => student)).ToList();
+            var courseLinks = courseLinkRepository.GetMany(c => c.CourseId == id);
+            List<Student> students = new List<Student>();
+            foreach (var link in courseLinks)
+            {
+                students.Add(studentRepository.Get(s => s.SSN == link.SSN));
+            }
+
+            return students;
         }
 
         public Student CreateStudentByCourseId(int id, Student student)
