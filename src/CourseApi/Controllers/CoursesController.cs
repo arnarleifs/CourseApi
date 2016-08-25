@@ -19,7 +19,7 @@ namespace CourseApi.Controllers
         // GET api/v1/courses
         [HttpGet]
         [Route("courses", Name = "GetCourses")]
-        public IEnumerable<Course> Get()
+        public IEnumerable<Course> GetCourses()
         {
             return courseService.GetAllCourses();
         }
@@ -27,7 +27,7 @@ namespace CourseApi.Controllers
         // GET api/v1/courses/5
         [HttpGet]
         [Route("courses/{id:int}", Name = "GetCourseById")]
-        public Course Get(int id)
+        public Course GetCourseById(int id)
         {
             return courseService.GetById(id);
         }
@@ -35,7 +35,7 @@ namespace CourseApi.Controllers
         // POST api/v1/courses
         [HttpPost]
         [Route("courses", Name = "CreateCourse")]
-        public IActionResult Post([FromBody]Course value)
+        public IActionResult CreateCourse([FromBody]Course value)
         {
             var course = courseService.AddCourse(value);
 
@@ -45,7 +45,7 @@ namespace CourseApi.Controllers
         // PUT api/v1/courses/1
         [HttpPut]
         [Route("courses/{id:int}", Name = "UpdateCourseById")]
-        public void Put(int id, [FromBody]Course value)
+        public void UpdateCourseById(int id, [FromBody]Course value)
         {
             courseService.UpdateCourse(id, value);
         }
@@ -53,7 +53,7 @@ namespace CourseApi.Controllers
         // DELETE api/v1/courses/1
         [HttpDelete]
         [Route("courses/{id:int}", Name = "DeleteCourseById")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteCourseById(int id)
         {
             courseService.DeleteCourse(id);
             return StatusCode(204);
