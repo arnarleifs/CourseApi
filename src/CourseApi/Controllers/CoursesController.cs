@@ -27,9 +27,14 @@ namespace CourseApi.Controllers
         // GET api/v1/courses/5
         [HttpGet]
         [Route("courses/{id:int}", Name = "GetCourseById")]
-        public Course GetCourseById(int id)
+        public IActionResult GetCourseById(int id)
         {
-            return courseService.GetById(id);
+            var course = courseService.GetById(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+            return new ObjectResult(course);
         }
 
         // POST api/v1/courses
@@ -37,6 +42,11 @@ namespace CourseApi.Controllers
         [Route("courses", Name = "CreateCourse")]
         public IActionResult CreateCourse([FromBody]Course value)
         {
+            if (value == null || value.Name == null || value.TemplateId == null || 
+                value.StartTime == null || value.EndTime == null)
+            {
+                return BadRequest();
+            }
             var course = courseService.AddCourse(value);
 
             return Created(Url.Link("GetCourseById", new {id = course.Id}), course);
@@ -45,9 +55,23 @@ namespace CourseApi.Controllers
         // PUT api/v1/courses/1
         [HttpPut]
         [Route("courses/{id:int}", Name = "UpdateCourseById")]
-        public void UpdateCourseById(int id, [FromBody]Course value)
+        public IActionResult UpdateCourseById(int id, [FromBody]Course value)
         {
+            if (value == null || value.Name == null || value.TemplateId == null ||
+                value.StartTime == null || value.EndTime == null)
+            {
+                return BadRequest();
+            }
+
+            var course = courseService.GetById(id);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
             courseService.UpdateCourse(id, value);
+            return new NoContentResult();
         }
 
         // DELETE api/v1/courses/1
@@ -70,6 +94,10 @@ namespace CourseApi.Controllers
         [Route("courses/{id:int}/students", Name = "CreateStudentByCourseId")]
         public IActionResult CreateStudentByCourseId(int id, [FromBody]Student value)
         {
+            if (value == null || value.SSN <= 0 || value.Name == null)
+            {
+                return BadRequest();
+            }
             var student = studentService.CreateStudentByCourseId(id, value);
             return StatusCode(201);
         }
