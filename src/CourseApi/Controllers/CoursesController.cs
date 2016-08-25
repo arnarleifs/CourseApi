@@ -45,7 +45,7 @@ namespace CourseApi.Controllers
             if (value == null || value.Name == null || value.TemplateId == null || 
                 value.StartTime == null || value.EndTime == null)
             {
-                return BadRequest();
+                return BadRequest("The model is not on the correct format");
             }
             var course = courseService.AddCourse(value);
 
@@ -60,7 +60,7 @@ namespace CourseApi.Controllers
             if (value == null || value.Name == null || value.TemplateId == null ||
                 value.StartTime == null || value.EndTime == null)
             {
-                return BadRequest();
+                return BadRequest("The model is not on the correct format");
             }
 
             var course = courseService.GetById(id);
@@ -96,7 +96,7 @@ namespace CourseApi.Controllers
         {
             if (value == null || value.SSN <= 0 || value.Name == null)
             {
-                return BadRequest();
+                return BadRequest("The model is not on the correct format");
             }
             var student = studentService.CreateStudentByCourseId(id, value);
             return StatusCode(201);
