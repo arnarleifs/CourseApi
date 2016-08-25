@@ -33,6 +33,7 @@ namespace CourseApi.Services.Implementations
 
         public void UpdateCourse(int id, Course course)
         {
+            course.Id = id;
             courseRepository.Update(course, c => c.Id == id);
         }
 
