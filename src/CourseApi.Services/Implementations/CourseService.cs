@@ -27,6 +27,7 @@ namespace CourseApi.Services.Implementations
 
         public Course AddCourse(Course course)
         {
+            course.Id = courseRepository.NextId++;
             return courseRepository.Add(course);
         }
 

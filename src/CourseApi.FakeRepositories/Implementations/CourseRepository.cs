@@ -41,6 +41,9 @@ namespace CourseApi.FakeRepositories.Implementations
                 EndTime = DateTime.Now.AddMonths(3),
                 StartTime = DateTime.Now
             });
+            NextId = 5;
         }
+
+        public int NextId { get; set; }
     }
 }
