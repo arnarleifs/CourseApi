@@ -79,6 +79,11 @@ namespace CourseApi.Controllers
         [Route("courses/{id:int}", Name = "DeleteCourseById")]
         public IActionResult DeleteCourseById(int id)
         {
+            var course = courseService.GetById(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
             courseService.DeleteCourse(id);
             return StatusCode(204);
         }
