@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CourseApi.FakeRepositories.Interfaces;
 using CourseApi.Models;
 
 namespace CourseApi.FakeRepositories.Implementations
 {
-    public class CourseRepository : RepositoryBase<Course>, ICourseRepository
+    public sealed class CourseRepository : RepositoryBase<Course>, ICourseRepository
     {
         public CourseRepository()
         {
@@ -15,8 +12,32 @@ namespace CourseApi.FakeRepositories.Implementations
             Add(new Course
             {
                 Id = 1,
-                Name = "Test Course",
-                TemplateId = "TEST-11-F",
+                Name = "Computer Physics",
+                TemplateId = "T-111-CPH",
+                EndTime = DateTime.Now.AddMonths(3),
+                StartTime = DateTime.Now
+            });
+            Add(new Course
+            {
+                Id = 2,
+                Name = "Human Mind Reading",
+                TemplateId = "T-510-HUM",
+                EndTime = DateTime.Now.AddMonths(3),
+                StartTime = DateTime.Now
+            });
+            Add(new Course
+            {
+                Id = 3,
+                Name = "Robotologicious",
+                TemplateId = "T-410-ROB",
+                EndTime = DateTime.Now.AddMonths(3),
+                StartTime = DateTime.Now
+            });
+            Add(new Course
+            {
+                Id = 4,
+                Name = "Google Analytics 101",
+                TemplateId = "T-101-GANA",
                 EndTime = DateTime.Now.AddMonths(3),
                 StartTime = DateTime.Now
             });

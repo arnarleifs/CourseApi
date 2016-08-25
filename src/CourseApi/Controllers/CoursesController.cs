@@ -9,10 +9,12 @@ namespace CourseApi.Controllers
     public class CoursesController : Controller
     {
         private readonly ICourseService courseService;
+        private readonly IStudentService studentService;
 
-        public CoursesController(ICourseService courseService)
+        public CoursesController(ICourseService courseService, IStudentService studentService)
         {
             this.courseService = courseService;
+            this.studentService = studentService;
         }
         // GET api/v1/courses
         [HttpGet]
@@ -55,6 +57,21 @@ namespace CourseApi.Controllers
         {
             courseService.DeleteCourse(id);
             return StatusCode(204);
+        }
+
+        [HttpGet]
+        [Route("courses/{id:int}/students", Name = "GetStudentsByCourseId")]
+        public IEnumerable<Student> GetStudentsByCourseId(int id)
+        {
+            return studentService.GetAllStudentsByCourseId(id);
+        }
+
+        [HttpPost]
+        [Route("courses/{id:int}/students", Name = "CreateStudentByCourseId")]
+        public IActionResult CreateStudentByCourseId(int id, [FromBody]Student value)
+        {
+            var student = studentService.CreateStudentByCourseId(id, value);
+            return StatusCode(201);
         }
     }
 }

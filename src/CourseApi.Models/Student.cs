@@ -7,7 +7,7 @@ namespace CourseApi.Models
 {
     public class Student
     {
-        public int SSN { get; set; }
+        public long SSN { get; set; }
         public string Name { get; set; }
     }
 }

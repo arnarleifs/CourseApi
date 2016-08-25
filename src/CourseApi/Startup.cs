@@ -43,6 +43,7 @@ namespace CourseApi
             
             // Add dependency injection
             services.AddTransient<ICourseService, CourseService>();
+            services.AddTransient<IStudentService, StudentService>();
 
             CourseApi.Services.Startup.Initialize(services);
         }
