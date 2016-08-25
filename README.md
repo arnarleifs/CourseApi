@@ -11,7 +11,8 @@ This application uses .NET Core.
 * Open the /CourseApi in the /src folder
 * Insert command 'dotnet run'
 
-Now the API is up and running on http://localhost:5000 and the route of the api is located at http://localhost:5000/api/v1/courses
+Now the API is up and running on http://localhost:5000 and the route of the api is located at http://localhost:5000/api/v1/courses,
+when doing post requests remember to put HTTP header 'Content-Type' : 'application/json'
 
 Available resources are:
   * http://localhost:5000/api/v1/courses -> Gets all courses [HttpGet]
