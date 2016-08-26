@@ -90,9 +90,13 @@ namespace CourseApi.Controllers
 
         [HttpGet]
         [Route("courses/{id:int}/students", Name = "GetStudentsByCourseId")]
-        public IEnumerable<Student> GetStudentsByCourseId(int id)
+        public IActionResult GetStudentsByCourseId(int id)
         {
-            return studentService.GetAllStudentsByCourseId(id);
+            if (courseService.GetById(id) == null)
+            {
+                return NotFound("The course with the given id is not available");
+            }
+            return new ObjectResult(studentService.GetAllStudentsByCourseId(id));
         }
 
         [HttpPost]
